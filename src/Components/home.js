@@ -76,7 +76,7 @@ function Home() {
                     <option value="ascending">Pop (asc)</option>
                 </select>
             </div>
-            <div className="container grid grid-cols-4 gap-16 mx-auto">
+            <div className="container grid grid-cols-4 2xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-16 mx-auto">
                 {countries.map( (country, index ) => <Link to={{ pathname : "details", state: country }}  key={index}><CountryCard
                     title={country.name}
                     image_url={country.flag}
