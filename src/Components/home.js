@@ -28,11 +28,17 @@ function Home() {
                         .sort((a, b) => a.population < b.population ? 1 : -1);
             setCountries(countrySortByAscPop);
         }
-        if(term === "alphabet"){
-            const countrySortByName = [].concat(countries)
+        if(term === "alphabet asc"){
+            const countrySortByNameAsc = [].concat(countries)
                         .sort((a, b) => a.name > b.name ? 1 : -1);
 
-            setCountries(countrySortByName);
+            setCountries(countrySortByNameAsc);
+        }
+        if(term === "alphabet dsc"){
+            const countrySortByNameDsc = [].concat(countries)
+                        .sort((a, b) => a.name < b.name ? 1 : -1);
+
+            setCountries(countrySortByNameDsc);
         }
     }
 
@@ -71,9 +77,10 @@ function Home() {
                 </select>
                 <select className="ml-10 my-2 p-2 shadow-md rounded-md font-medium" onChange={ val => sortCountry(val.target.value)}>
                     <option value="">Sort</option>
-                    <option value="alphabet">Alphabetical</option>
-                    <option value="descending">Pop (dsc)</option>
-                    <option value="ascending">Pop (asc)</option>
+                    <option value="alphabet asc">Alphabet (asc)</option>
+                    <option value="alphabet dsc">Alphabet (dsc)</option>
+                    <option value="descending">Pop (asc)</option>
+                    <option value="ascending">Pop (dsc)</option>
                 </select>
             </div>
             <div className="container grid grid-cols-4 2xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-16 mx-auto">
